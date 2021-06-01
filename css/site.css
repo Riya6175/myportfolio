@@ -1,0 +1,241 @@
+html {
+  scroll-behavior: smooth; }
+
+html, body {
+  overflow-x: hidden; }
+
+.site-title {
+  font-size: 1.35rem;
+  line-height: 2.5rem; }
+
+  .cover{
+    height:100%;
+  }
+
+.nav-link {
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 2.5rem;
+  color: rgba(0, 0, 0, 0.8); }
+
+.nav-link:hover,
+.nav-link:focus,
+.active .nav-link {
+  color: rgba(0, 0, 0, 0.6); }
+
+  .fa-2x{
+    font-size: 1rem !important;
+  }
+.nav-item + .nav-item {
+  margin-left: 1rem; }
+
+.intro-title {
+  font-weight: 700; }
+
+.container-narrow {
+  max-width: 1024px;
+  margin: 0 auto; }
+
+img.avatar {
+  border-radius: 30px; }
+
+  .img-fluid {
+    background-color: none;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 20%;
+    padding-top: 20%; 
+  }
+
+  .intro{
+    padding-top: 3rem !important;
+    padding-bottom: 4rem !important;
+    margin-top: 4rem !important;
+  }
+
+   .pb-4 {
+    padding-bottom: 6rem !important
+  }
+  
+
+footer a:not(.nav-link) {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer; }
+
+@media (min-width: 48em) {
+  .site-title {
+    float: left; }
+  .site-nav {
+    float: right; } }
+
+.marker {
+  position: relative;
+  display: inline;
+  width: auto; }
+
+.marker-center {
+  padding-right: 0; }
+
+.marker:after {
+  content: "";
+  width: 125px;
+  height: 30px;
+  position: absolute;
+  bottom: -25px;
+  right: -30px;
+  background-image: url("../images/marker.svg");
+  background-repeat: no-repeat; }
+
+.marker-center:after {
+  bottom: -30px;
+  left: 50%;
+  margin-left: -60px; }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* Grid Item */
+.grid-sizer,
+.grid-item {
+  width: 100%; }
+
+.grid-item {
+  padding-bottom: 12px; }
+
+@media (min-width: 48em) {
+  .grid-sizer,
+  .grid-item {
+    width: 25%; }
+  .grid-item {
+    float: left;
+    padding: 6px; } }
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  max-width: 100%; }
+
+/* Portfolio */
+.portolio-section .container {
+  padding: 0; }
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0; }
+
+.portfolio-item figcaption {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: transform 0.35s;
+  transform: translate3d(0, 100%, 0); }
+
+.portfolio-item figcaption h4 {
+  color: #222;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px; }
+
+.portfolio-item figcaption p {
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0; }
+
+.portfolio-item:hover figcaption {
+  transform: translate3d(0, 0, 0); }
+
+  /*button download*/
+
+.buttonDownload {
+	display: inline-block;
+	position: relative;
+	padding: 10px 40px;
+ 
+  
+	
+	/* text-decoration: none;
+	font-size: 0.9em;
+	text-align: center;
+	text-indent: 15px; */
+}
+
+.buttonDownload:hover {
+	background-color: #333;
+	color: white;
+}
+
+.buttonDownload:before, .buttonDownload:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 52%;
+}
+
+/* Download box shape  */
+.buttonDownload:before {
+	width: 13px;
+	height: 2px;
+	border-style: solid;
+	border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.buttonDownload:after {
+	width: 0;
+	height: 0;
+	margin-left: 3px;
+	margin-top: -7px;
+  
+	border-style: solid;
+	border-width: 4px 4px 0 4px;
+	border-color: transparent;
+	border-top-color: inherit;
+	
+	animation: downloadArrow 2s linear infinite;
+	animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+	border-color: #f6e05e;
+}
+
+.buttonDownload:hover:after {
+	border-top-color: #f6e05e;
+	animation-play-state: running;
+}
+
+/* keyframes for the download icon anim */
+@keyframes downloadArrow {
+	/* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
+	0% {
+		margin-top: -7px;
+		opacity: 1;
+	}
+	
+	0.001% {
+		margin-top: -15px;
+		opacity: 0;
+	}
+	
+	50% {
+		opacity: 1;
+	}
+	
+	100% {
+		margin-top: 0;
+		opacity: 0;
+	}
+}
