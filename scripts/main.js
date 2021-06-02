@@ -21,22 +21,21 @@ $grid.imagesLoaded().progress( function() {
 document.addEventListener('DOMContentLoaded', () => {
 
   const themeStylesheet = document.getElementById('theme');
-  const storedTheme = localStorage.getItem('theme');
-  if(storedTheme){
-      themeStylesheet.href = storedTheme;
-  }
   const themeToggle = document.getElementById('theme-toggle');
+  themeStylesheet.href = 'css/main.css';
   themeToggle.addEventListener('click', () => {
       // if it's light -> go dark
-      if(themeStylesheet.href.includes('light')){
+      if(themeStylesheet.href.includes('main')){
+        $("button").click(function(){
+          $(this).find("i").removeClass("fa-moon").addClass("fa-sun")
           themeStylesheet.href = 'css/dark-theme.css';
           
+      });
       } else {
-          // if it's dark -> go light
-          themeStylesheet.href = 'light-theme.css';
-         
+        $("button").click(function(){
+          $(this).find("i").removeClass("fa-sun").addClass("fa-moon")
+          themeStylesheet.href = 'css/main.css';
+      });
       }
-      // save the preference to localStorage
-      //localStorage.setItem('theme',themeStylesheet.href)  
   })
 })
