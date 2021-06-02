@@ -22,20 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const themeStylesheet = document.getElementById('theme');
   const themeToggle = document.getElementById('theme-toggle');
-  themeStylesheet.href = 'css/main.css';
+  const iconToggle = document.getElementById('dark');
   themeToggle.addEventListener('click', () => {
       // if it's light -> go dark
       if(themeStylesheet.href.includes('main')){
-        $("button").click(function(){
-          $(this).find("i").removeClass("fa-moon").addClass("fa-sun")
           themeStylesheet.href = 'css/dark-theme.css';
-          
-      });
+          iconToggle.classList.remove('fa-moon');
+          iconToggle.classList.add('fa-sun');
       } else {
-        $("button").click(function(){
-          $(this).find("i").removeClass("fa-sun").addClass("fa-moon")
+          // if it's dark -> go light
           themeStylesheet.href = 'css/main.css';
-      });
+          iconToggle.classList.remove('fa-sun');
+          iconToggle.classList.add('fa-moon');
+
       }
   })
 })
